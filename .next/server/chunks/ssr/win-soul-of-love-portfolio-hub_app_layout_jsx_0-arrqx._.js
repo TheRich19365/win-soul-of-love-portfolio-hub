@@ -1,3 +1,0 @@
-module.exports=[72992,a=>{"use strict";var b=a.i(7997);a.s(["default",0,function({children:a}){return(0,b.jsx)("html",{lang:"th",children:(0,b.jsx)("body",{children:a})})},"metadata",0,{title:"Win Soul of Love Portfolio Hub",description:"Premium spiritual-tech portfolio hub for Win Soul of Love."},"viewport",0,{width:"device-width",initialScale:1,themeColor:"#05030f"}])},43053,a=>{a.n(a.i(72992))}];
-
-//# sourceMappingURL=win-soul-of-love-portfolio-hub_app_layout_jsx_0-arrqx._.js.map
