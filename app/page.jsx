@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   ArrowUpRight,
   BriefcaseBusiness,
@@ -8,9 +9,7 @@ import {
   Heart,
   Mail,
   Map,
-  MoonStar,
   Music2,
-  Palette,
   Route,
   Sparkles,
   Star,
@@ -77,12 +76,48 @@ const timeline = [
 ];
 
 const visualPortfolio = [
-  "Daily Energy poster",
-  "Soul of Love UI",
-  "Music cover",
-  "Journey of Light visual",
-  "Matrix 9 concept",
-  "AI Prompt system"
+  {
+    title: "Daily Energy Poster",
+    subtitle: "Cosmic card result, aura score, premium oracle layout",
+    label: "Poster",
+    image: "/images/portfolio/daily-energy-poster.webp",
+    alt: "Premium Soul of Love Daily Energy poster altar with luminous oracle card and aura spectrum"
+  },
+  {
+    title: "Soul of Love UI",
+    subtitle: "Smoked glass interface, soft aura glow, spiritual-tech dashboard",
+    label: "Interface",
+    image: "/images/portfolio/soul-of-love-ui.webp",
+    alt: "Luxury Soul of Love spiritual-tech dashboard with smoked glass modules and aura interface"
+  },
+  {
+    title: "Music Cover",
+    subtitle: "Source Signal emotion, cinematic light, sound as inner return",
+    label: "Music",
+    image: "/images/portfolio/music-cover.webp",
+    alt: "Cinematic Source Signal Music studio scene with waveform light, microphone, and keyboard"
+  },
+  {
+    title: "Journey of Light Visual",
+    subtitle: "Sacred places, travel notes, warm field research energy",
+    label: "Travel",
+    image: "/images/portfolio/journey-of-light.webp",
+    alt: "Traveler on a golden path toward a sacred Thailand temple silhouette at sunrise"
+  },
+  {
+    title: "Matrix 9 Concept",
+    subtitle: "Personal energy map, archetype grid, symbolic life interface",
+    label: "Matrix",
+    image: "/images/portfolio/matrix-9.webp",
+    alt: "Refined luminous Matrix 9 grid with nine connected energy gates and sacred geometry"
+  },
+  {
+    title: "AI Prompt System",
+    subtitle: "Prompt architecture, brand DNA, image direction workflow",
+    label: "Prompt",
+    image: "/images/portfolio/ai-prompt-system.webp",
+    alt: "Sophisticated AI prompt architecture workspace with connected workflow layers and visual previews"
+  }
 ];
 
 const socialLinks = [
@@ -132,14 +167,38 @@ export default function Page() {
           </div>
         </div>
 
-        <div className="hero-orb" aria-hidden="true">
-          <div className="soul-ring" />
-          <div className="vertical-axis" />
-          <div className="orbit orbit-one" />
-          <div className="orbit orbit-two" />
-          <div className="inner-sigil">
-            <MoonStar size={54} />
-            <span>Win</span>
+        <div className="brand-hero-card">
+          <div className="brand-card-glow" />
+          <div className="brand-card-frame">
+            <div className="brand-depth-panel panel-one" />
+            <div className="brand-depth-panel panel-two" />
+            <div className="soul-ring" />
+            <div className="vertical-axis" />
+            <div className="orbit orbit-one" />
+            <div className="orbit orbit-two" />
+            <div className="brand-aura-halo" />
+            <div className="brand-logo-mark">
+              <Image
+                src="/images/brand/win-soul-of-love-logo.webp"
+                alt="Win Soul of Love logo"
+                fill
+                sizes="(max-width: 759px) 58vw, 260px"
+                className="brand-logo-image"
+                priority
+              />
+            </div>
+            <div className="brand-spark spark-one" />
+            <div className="brand-spark spark-two" />
+            <div className="brand-spark spark-three" />
+            <div className="brand-card-copy">
+              <span>WIN SOUL OF LOVE</span>
+              <h2>Soul of Love Ecosystem</h2>
+              <p>Daily Energy • Music • AI Interface • Journey of Light</p>
+            </div>
+            <div className="brand-card-footer">
+              <small>Creator-Led Spiritual Tech</small>
+              <small>Since 2026</small>
+            </div>
           </div>
         </div>
       </section>
@@ -193,9 +252,22 @@ export default function Page() {
         <SectionHeading eyebrow="Visual Portfolio Preview" title="ภาพรวมงานออกแบบ คอนเทนต์ และระบบภาพในอนาคต" />
         <div className="visual-grid">
           {visualPortfolio.map((item, index) => (
-            <article key={item} className={`visual-tile tile-${index + 1}`}>
-              <Palette size={22} />
-              <span>{item}</span>
+            <article key={item.title} className={`visual-tile mockup-tile tile-${index + 1}`}>
+              <div className="mockup-art">
+                <Image
+                  src={item.image}
+                  alt={item.alt}
+                  fill
+                  sizes="(max-width: 759px) 100vw, 33vw"
+                  className="mockup-image"
+                />
+                <span className="mockup-image-overlay" />
+              </div>
+              <div className="mockup-copy">
+                <small>{item.label}</small>
+                <h3>{item.title}</h3>
+                <p>{item.subtitle}</p>
+              </div>
             </article>
           ))}
         </div>
