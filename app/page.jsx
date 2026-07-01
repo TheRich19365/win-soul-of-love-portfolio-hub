@@ -16,6 +16,7 @@ import {
   Wand2
 } from "lucide-react";
 import { GlassCard, SectionHeading, SignalBadge } from "../components/SoulUI.jsx";
+import { MusicExperiencePlayer } from "../components/MusicExperiencePlayer.jsx";
 
 const dailyEnergyUrl = "https://soul-of-love-daily-energy.vercel.app";
 const sunoUrl = "https://suno.com/@souloflove6395";
@@ -36,8 +37,8 @@ const projects = [
     name: "Source Signal Music",
     status: "Active",
     description: "Original music, emotional awakening, hope, shadow, love, and self-return.",
-    cta: "Open YouTube",
-    href: youtubeUrl,
+    cta: "Enter Music Journey",
+    href: "#music-experience",
     icon: Music2
   },
   {
@@ -227,12 +228,41 @@ export default function Page() {
                 </div>
                 <h3>{project.name}</h3>
                 <p>{project.description}</p>
-                <a href={project.href} target={project.href === "#" ? undefined : "_blank"} rel={project.href === "#" ? undefined : "noreferrer"}>
+                <a
+                  href={project.href}
+                  target={project.href === "#" || project.href.startsWith("#") ? undefined : "_blank"}
+                  rel={project.href === "#" || project.href.startsWith("#") ? undefined : "noreferrer"}
+                >
                   {project.cta} <ArrowUpRight size={16} />
                 </a>
               </GlassCard>
             );
           })}
+        </div>
+      </section>
+
+      <section id="music-experience" className="section-block music-experience-section">
+        <div className="music-experience-grid">
+          <div className="music-story">
+            <SectionHeading eyebrow="WIN SOUL OF LOVE — MUSIC" title="Music Born from the Inner Journey" />
+            <GlassCard className="music-story-card">
+              <p>
+                Original songs shaped from love, shadow, healing, awakening, and the courage to return to the Authentic Self.
+              </p>
+              <p>
+                Win Soul of Love is the creator heart of this ecosystem. Source Signal Music is the channel where the music journey is published, collected, and shared.
+              </p>
+              <div className="music-signal-list" aria-label="Music themes">
+                <span>Love</span>
+                <span>Shadow</span>
+                <span>Healing</span>
+                <span>Awakening</span>
+                <span>Authentic Self</span>
+              </div>
+            </GlassCard>
+          </div>
+
+          <MusicExperiencePlayer />
         </div>
       </section>
 
