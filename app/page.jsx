@@ -1,7 +1,6 @@
 import Image from "next/image";
 import {
   ArrowUpRight,
-  BriefcaseBusiness,
   Compass,
   Cpu,
   Disc3,
@@ -9,20 +8,16 @@ import {
   Heart,
   Mail,
   Map,
+  MessageCircle,
   Music2,
   Route,
   Sparkles,
   Star,
   Wand2
 } from "lucide-react";
+import { ecosystemLinks, externalLinkProps } from "./ecosystemLinks.js";
 import { GlassCard, SectionHeading, SignalBadge } from "../components/SoulUI.jsx";
 import { MusicExperiencePlayer } from "../components/MusicExperiencePlayer.jsx";
-
-const dailyEnergyUrl = "https://soul-of-love-daily-energy.vercel.app";
-const sunoUrl = "https://suno.com/@souloflove6395";
-const tiktokUrl = "https://www.tiktok.com/@souloflove6395.official";
-const youtubeUrl = "https://www.youtube.com/@SourceSignalMusic";
-const emailUrl = "mailto:Souloflove19365@gmail.com";
 
 const projects = [
   {
@@ -30,8 +25,21 @@ const projects = [
     status: "Live",
     description: "AI-powered daily energy reading, aura, card symbolism, and premium poster prompt generator.",
     cta: "Launch App",
-    href: dailyEnergyUrl,
+    href: ecosystemLinks.dailyEnergy.url,
     icon: Sparkles
+  },
+  {
+    name: "Matrix 9 Interface",
+    supportTitle: "Living Soul Map",
+    status: "Live Application",
+    description:
+      "ระบบสะท้อน Pattern จากวันเดือนปีเกิดที่แยก Core Blueprint ออกจากพลังตามช่วงเวลา พร้อม Being Architecture, Current Cycle, Monthly Pulse และ Daily Signal",
+    cta: "เปิด Matrix 9",
+    supportingCta: "Explore Your Living Soul Map",
+    href: ecosystemLinks.matrix9.url,
+    icon: Compass,
+    featured: true,
+    tags: ["React", "Living Soul Map", "Symbolic System", "Current Cycle", "Personal Experience"]
   },
   {
     name: "Source Signal Music",
@@ -50,19 +58,11 @@ const projects = [
     icon: Route
   },
   {
-    name: "Matrix 9 Interface",
-    status: "Future Module",
-    description: "Personal energy map, archetype system, life path, and Soul of Love personal interface.",
-    cta: "Coming Soon",
-    href: "#",
-    icon: Compass
-  },
-  {
     name: "System & Solution",
     status: "Portfolio",
     description: "AI workflow, dashboard, automation, analytics, UX system, prompt architecture, and product design.",
     cta: "View Work",
-    href: "#",
+    href: "#portfolio",
     icon: Cpu
   }
 ];
@@ -122,12 +122,25 @@ const visualPortfolio = [
 ];
 
 const socialLinks = [
-  { label: "TikTok", value: "Soul of Love", href: tiktokUrl, icon: Disc3 },
-  { label: "Suno", value: "Soul of Love Music", href: sunoUrl, icon: Music2 },
-  { label: "YouTube", value: "Source Signal Music", href: youtubeUrl, icon: Music2 },
-  { label: "Facebook", value: "Coming Soon", href: "#", icon: Globe2 },
-  { label: "Contact", value: "Souloflove19365@gmail.com", href: emailUrl, icon: Mail }
+  { label: "LINE Official", value: ecosystemLinks.lineOa.id, href: ecosystemLinks.lineOa.url, icon: MessageCircle, primary: true },
+  { label: "Email", value: ecosystemLinks.email.address, href: ecosystemLinks.email.mailto, icon: Mail },
+  { label: "Facebook", value: "Soul of Love", href: ecosystemLinks.facebook.url, icon: Globe2 },
+  { label: "Instagram", value: ecosystemLinks.instagram.handle, href: ecosystemLinks.instagram.url, icon: Globe2 },
+  { label: "TikTok", value: "Soul of Love", href: ecosystemLinks.tiktok.url, icon: Disc3 },
+  { label: "Suno", value: "Soul of Love Music", href: ecosystemLinks.suno.url, icon: Music2 },
+  { label: "YouTube", value: "Source Signal Music", href: ecosystemLinks.youtube.url, icon: Music2 }
 ];
+
+const ecosystemContactLinks = [
+  { label: "Matrix 9", value: "Living Soul Map", href: ecosystemLinks.matrix9.url, icon: Compass },
+  { label: "YouTube Music", value: "Source Signal Music", href: ecosystemLinks.youtube.url, icon: Music2 },
+  { label: "Suno Music", value: "Soul of Love Music", href: ecosystemLinks.suno.url, icon: Music2 }
+];
+
+function linkProps(href) {
+  if (!href || href === "#" || href.startsWith("#") || href.startsWith("mailto:")) return {};
+  return externalLinkProps;
+}
 
 export default function Page() {
   return (
@@ -143,11 +156,17 @@ export default function Page() {
           </span>
         </a>
         <nav className="desktop-nav" aria-label="Main navigation">
-          <a href="#about">About</a>
+          <a href={ecosystemLinks.matrix9.url} {...externalLinkProps}>Matrix 9</a>
           <a href="#projects">Projects</a>
-          <a href="#journey">Journey</a>
-          <a href="#social">Social</a>
+          <a href="#music-experience">Music</a>
+          <a href="#contact">Contact</a>
         </nav>
+        <div className="topbar-actions">
+          <a className="line-oa-button" href={ecosystemLinks.lineOa.url} {...externalLinkProps} aria-label={`Open LINE Official ${ecosystemLinks.lineOa.id}`}>
+            <MessageCircle size={16} />
+            LINE OA
+          </a>
+        </div>
       </header>
 
       <section id="home" className="hero-section profile-hero">
@@ -158,9 +177,15 @@ export default function Page() {
           <p className="hero-lead">
             พื้นที่รวมผลงาน โปรเจกต์ และเส้นทางการสร้างระบบ Soul of Love — จากดนตรี คอนเทนต์ พลังงานภายใน ไปสู่ AI Spiritual Interface
           </p>
+          <p className="hero-positioning">
+            เชื่อมงานสร้างสรรค์ ประสบการณ์ของมนุษย์ ระบบ AI และพลังงานของแบรนด์ ให้กลายเป็นประสบการณ์ที่เข้าถึงได้จริง
+          </p>
           <div className="hero-actions">
-            <a className="primary-cta" href={dailyEnergyUrl} target="_blank" rel="noreferrer">
+            <a className="primary-cta" href={ecosystemLinks.dailyEnergy.url} {...externalLinkProps}>
               Launch Daily Energy <ArrowUpRight size={18} />
+            </a>
+            <a className="secondary-cta matrix-cta" href={ecosystemLinks.matrix9.url} {...externalLinkProps}>
+              สำรวจ Matrix 9 <ArrowUpRight size={18} />
             </a>
             <a className="secondary-cta" href="#projects">
               Explore Projects
@@ -204,6 +229,22 @@ export default function Page() {
         </div>
       </section>
 
+      <section className="featured-experience" aria-labelledby="matrix-featured-title">
+        <GlassCard className="matrix-feature-card">
+          <div className="matrix-motif" aria-hidden="true">
+            {Array.from({ length: 9 }).map((_, index) => <span key={index} />)}
+          </div>
+          <div className="matrix-feature-copy">
+            <SignalBadge icon={Compass}>Live Application</SignalBadge>
+            <h2 id="matrix-featured-title">Matrix 9 — Living Soul Map</h2>
+            <p>ตัวตนหลักยังคงอยู่ แต่พลังที่ชีวิตกำลังกระตุ้นสามารถเปลี่ยนไปตามช่วงเวลา</p>
+          </div>
+          <a className="primary-cta matrix-launch" href={ecosystemLinks.matrix9.url} {...externalLinkProps}>
+            สำรวจ Matrix 9 <ArrowUpRight size={18} />
+          </a>
+        </GlassCard>
+      </section>
+
       <section id="about" className="content-grid two-col">
         <SectionHeading eyebrow="About / Who I Am" title="ผู้สร้าง ecosystem ที่เชื่อม AI, ดนตรี, พลังงานภายใน และ visual storytelling" />
         <GlassCard className="about-card">
@@ -221,20 +262,23 @@ export default function Page() {
           {projects.map((project) => {
             const Icon = project.icon;
             return (
-              <GlassCard key={project.name} className="ecosystem-card">
+              <GlassCard key={project.name} className={`ecosystem-card ${project.featured ? "matrix-project-card" : ""}`}>
                 <div className="card-topline">
                   <span className="icon-chip"><Icon size={18} /></span>
                   <span className="status-pill">{project.status}</span>
                 </div>
                 <h3>{project.name}</h3>
+                {project.supportTitle ? <p className="project-support-title">{project.supportTitle}</p> : null}
                 <p>{project.description}</p>
-                <a
-                  href={project.href}
-                  target={project.href === "#" || project.href.startsWith("#") ? undefined : "_blank"}
-                  rel={project.href === "#" || project.href.startsWith("#") ? undefined : "noreferrer"}
-                >
+                {project.tags ? (
+                  <div className="project-tags" aria-label="Matrix 9 tags">
+                    {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
+                  </div>
+                ) : null}
+                <a href={project.href} {...linkProps(project.href)}>
                   {project.cta} <ArrowUpRight size={16} />
                 </a>
+                {project.supportingCta ? <small className="project-supporting-cta">{project.supportingCta}</small> : null}
               </GlassCard>
             );
           })}
@@ -311,10 +355,9 @@ export default function Page() {
             return (
               <a
                 key={`${item.label}-${item.value}`}
-                className="social-card"
+                className={`social-card ${item.primary ? "primary-social-card" : ""}`}
                 href={item.href}
-                target={item.href === "#" || item.href.startsWith("mailto:") ? undefined : "_blank"}
-                rel={item.href === "#" || item.href.startsWith("mailto:") ? undefined : "noreferrer"}
+                {...linkProps(item.href)}
               >
                 <span className="icon-chip"><Icon size={18} /></span>
                 <span>
@@ -331,19 +374,43 @@ export default function Page() {
       <section id="contact" className="contact-section">
         <GlassCard className="contact-card">
           <SignalBadge icon={Wand2}>Contact / Collaboration</SignalBadge>
-          <h2>เชื่อมงานสร้างสรรค์เข้ากับระบบ AI และพลังงานของแบรนด์</h2>
+          <h2>พูดคุย เชื่อมงาน และติดตาม Soul of Love</h2>
           <p>
-            สำหรับงานร่วมมือ โปรเจกต์คอนเทนต์ งานออกแบบระบบ AI / Spiritual Interface / Music / Energy Travel
-            สามารถติดต่อผ่านช่องทางโซเชียลด้านล่างได้เลย
+            สอบถามงาน นัดพูดคุย แจ้งปัญหาการใช้งาน หรือติดตามผลงานเพลง บทความ และโปรเจกต์ใหม่ ๆ
+            ผ่านช่องทางหลักของ Win Soul of Love ได้โดยตรง
           </p>
-          <p>Email: Souloflove19365@gmail.com</p>
+          <p className="contact-helper">
+            สอบถามงาน นัดพูดคุย หรือส่งรายละเอียดเบื้องต้นผ่าน LINE Official ได้โดยตรง
+          </p>
           <div className="contact-actions">
-            <a className="primary-cta" href={dailyEnergyUrl} target="_blank" rel="noreferrer">
-              Launch Daily Energy <ArrowUpRight size={18} />
+            <a className="primary-cta" href={ecosystemLinks.lineOa.url} {...externalLinkProps}>
+              <MessageCircle size={18} />
+              พูดคุยผ่าน LINE Official
             </a>
-            <a className="secondary-cta" href={emailUrl}>
+            <a className="secondary-cta" href={ecosystemLinks.email.mailto}>
               Email / Contact
             </a>
+            <a className="secondary-cta" href={ecosystemLinks.email.supportMailto}>
+              แจ้งปัญหา Matrix 9
+            </a>
+          </div>
+          <div className="contact-link-groups">
+            <div>
+              <h3>Primary Contact</h3>
+              <a href={ecosystemLinks.lineOa.url} {...externalLinkProps}>LINE Official · {ecosystemLinks.lineOa.id}</a>
+              <a href={ecosystemLinks.email.mailto}>{ecosystemLinks.email.address}</a>
+            </div>
+            <div>
+              <h3>Social</h3>
+              <a href={ecosystemLinks.facebook.url} {...externalLinkProps}>Facebook</a>
+              <a href={ecosystemLinks.instagram.url} {...externalLinkProps}>Instagram · {ecosystemLinks.instagram.handle}</a>
+            </div>
+            <div>
+              <h3>Creative Ecosystem</h3>
+              {ecosystemContactLinks.map((item) => (
+                <a key={item.label} href={item.href} {...linkProps(item.href)}>{item.label} · {item.value}</a>
+              ))}
+            </div>
           </div>
         </GlassCard>
       </section>
@@ -351,7 +418,16 @@ export default function Page() {
       <footer className="footer">
         <span><Star size={14} /> Win Soul of Love</span>
         <span>Soul of Love Ecosystem</span>
-        <span><Map size={14} /> Daily Energy • Music • AI Interface • Journey of Light</span>
+        <span><Map size={14} /> Daily Energy • Matrix 9 • Music • AI Interface • Journey of Light</span>
+        <nav className="footer-links" aria-label="Footer ecosystem links">
+          <a className="footer-line-link" href={ecosystemLinks.lineOa.url} {...externalLinkProps}>LINE Official · {ecosystemLinks.lineOa.id}</a>
+          <a href={ecosystemLinks.matrix9.url} {...externalLinkProps}>Matrix 9</a>
+          <a href={ecosystemLinks.email.mailto}>Email</a>
+          <a href={ecosystemLinks.facebook.url} {...externalLinkProps}>Facebook</a>
+          <a href={ecosystemLinks.instagram.url} {...externalLinkProps}>Instagram</a>
+          <a href={ecosystemLinks.youtube.url} {...externalLinkProps}>YouTube Music</a>
+          <a href={ecosystemLinks.suno.url} {...externalLinkProps}>Suno Music</a>
+        </nav>
       </footer>
     </main>
   );

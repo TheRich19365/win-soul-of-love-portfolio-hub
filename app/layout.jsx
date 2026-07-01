@@ -2,7 +2,8 @@ import "./globals.css";
 
 export const metadata = {
   title: "Win Soul of Love Portfolio Hub",
-  description: "Premium spiritual-tech portfolio hub for Win Soul of Love."
+  description:
+    "Win Soul of Love creates music, visual storytelling, AI-assisted creative systems, Matrix 9, and human-centered symbolic experiences."
 };
 
 export const viewport = {

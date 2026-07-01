@@ -2,11 +2,11 @@
 
 import { useMemo, useState } from "react";
 import { ArrowUpRight, Headphones, Maximize2, Music2, Play, Smartphone } from "lucide-react";
+import { ecosystemLinks } from "../app/ecosystemLinks.js";
 
 const YOUTUBE_PLAYLIST_ID = "PLgOKbm5kdkuozXVP6TrOJLxJ0Uz3tpQbK";
 const FIRST_VIDEO_ID = "WusDnoVlLZ0";
 const YOUTUBE_PLAYLIST_URL = "https://www.youtube.com/watch?v=WusDnoVlLZ0&list=PLgOKbm5kdkuozXVP6TrOJLxJ0Uz3tpQbK";
-const YOUTUBE_CHANNEL_URL = "https://www.youtube.com/@SourceSignalMusic";
 
 // Add known portrait video IDs here as the playlist grows. Unknown videos default to landscape.
 const PORTRAIT_VIDEO_IDS = [];
@@ -91,10 +91,10 @@ export function MusicExperiencePlayer() {
       ) : null}
 
       <div className="music-player-links">
-        <a href={YOUTUBE_PLAYLIST_URL} target="_blank" rel="noreferrer">
+        <a href={YOUTUBE_PLAYLIST_URL} target="_blank" rel="noreferrer noopener">
           Open Playlist <ArrowUpRight size={14} />
         </a>
-        <a href={YOUTUBE_CHANNEL_URL} target="_blank" rel="noreferrer">
+        <a href={ecosystemLinks.youtube.url} target="_blank" rel="noreferrer noopener">
           YouTube Channel <ArrowUpRight size={14} />
         </a>
       </div>
