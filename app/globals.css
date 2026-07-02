@@ -257,6 +257,7 @@ a {
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
 }
 
 .primary-cta {
@@ -264,6 +265,11 @@ a {
   color: #15100a;
   background: linear-gradient(135deg, var(--champagne), var(--gold), #b99a62);
   box-shadow: 0 0 46px rgba(245, 212, 155, 0.28);
+}
+
+.primary-cta:hover,
+.secondary-cta:hover {
+  transform: translateY(-2px);
 }
 
 .secondary-cta {
@@ -274,11 +280,25 @@ a {
 }
 
 .matrix-cta {
-  border-color: rgba(142, 231, 255, 0.24);
-  color: #dff8ff;
+  border-color: rgba(142, 231, 255, 0.58);
+  color: #f4fdff;
   background:
-    radial-gradient(circle at 20% 20%, rgba(142, 231, 255, 0.14), transparent 42%),
-    rgba(255, 255, 255, 0.055);
+    linear-gradient(135deg, rgba(142, 231, 255, 0.18), rgba(245, 212, 155, 0.1)),
+    radial-gradient(circle at 20% 20%, rgba(142, 231, 255, 0.25), transparent 42%),
+    rgba(5, 22, 34, 0.74);
+  box-shadow:
+    0 0 34px rgba(142, 231, 255, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.matrix-cta:hover,
+.matrix-cta:focus-visible {
+  border-color: rgba(255, 242, 206, 0.62);
+  color: white;
+  box-shadow:
+    0 0 42px rgba(142, 231, 255, 0.24),
+    0 0 26px rgba(245, 212, 155, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .signal-badge {
@@ -677,6 +697,10 @@ a {
 
 .matrix-launch {
   width: fit-content;
+  white-space: nowrap;
+  box-shadow:
+    0 0 42px rgba(245, 212, 155, 0.24),
+    0 0 26px rgba(142, 231, 255, 0.12);
 }
 
 .two-col {
@@ -819,10 +843,40 @@ a {
     rgba(4, 3, 13, 0.52);
 }
 
+.project-daily {
+  border-color: rgba(245, 212, 155, 0.3);
+  background:
+    radial-gradient(circle at 18% 10%, rgba(245, 212, 155, 0.18), transparent 32%),
+    radial-gradient(circle at 88% 78%, rgba(155, 124, 255, 0.16), transparent 34%),
+    linear-gradient(135deg, rgba(255,255,255,.105), rgba(255,255,255,.036)),
+    rgba(4, 3, 13, 0.52);
+}
+
+.project-matrix .icon-chip,
+.project-matrix .project-tags span {
+  border-color: rgba(142, 231, 255, 0.26);
+  color: #dff8ff;
+  background: rgba(142, 231, 255, 0.075);
+}
+
+.project-daily .project-tags span {
+  border-color: rgba(245, 212, 155, 0.22);
+  color: var(--champagne);
+  background: rgba(245, 212, 155, 0.075);
+}
+
 .project-support-title {
   margin: -2px 0 12px !important;
   color: var(--gold) !important;
   font-weight: 900;
+}
+
+.project-english-line {
+  flex: 0 !important;
+  margin-top: 12px !important;
+  color: rgba(214, 219, 234, 0.78) !important;
+  font-size: 0.84rem;
+  line-height: 1.65 !important;
 }
 
 .project-tags {
