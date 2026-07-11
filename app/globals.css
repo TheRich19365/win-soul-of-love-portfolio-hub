@@ -301,6 +301,45 @@ a {
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
+.wisdom-cta {
+  border-color: rgba(255, 242, 206, 0.48);
+  color: var(--champagne);
+  background:
+    radial-gradient(circle at 28% 18%, rgba(255, 242, 206, 0.2), transparent 34%),
+    radial-gradient(circle at 82% 74%, rgba(142, 231, 255, 0.14), transparent 36%),
+    rgba(245, 212, 155, 0.065);
+  box-shadow:
+    0 0 30px rgba(245, 212, 155, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.hero-ecosystem-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.hero-ecosystem-links a {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  padding: 8px 11px;
+  color: rgba(226, 232, 240, 0.88);
+  background: rgba(255, 255, 255, 0.045);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: 180ms ease;
+}
+
+.hero-ecosystem-links a:hover,
+.hero-ecosystem-links a:focus-visible {
+  border-color: rgba(245, 212, 155, 0.36);
+  color: var(--champagne);
+  background: rgba(245, 212, 155, 0.075);
+}
+
 .signal-badge {
   display: inline-flex;
   align-items: center;
@@ -703,6 +742,164 @@ a {
     0 0 26px rgba(142, 231, 255, 0.12);
 }
 
+.wisdom-feature-card {
+  display: grid;
+  gap: 20px;
+  align-items: center;
+  border-color: rgba(255, 242, 206, 0.24);
+  padding-block: clamp(20px, 4vw, 30px);
+  background:
+    radial-gradient(circle at 10% 22%, rgba(255, 242, 206, 0.16), transparent 30%),
+    radial-gradient(circle at 90% 72%, rgba(142, 231, 255, 0.13), transparent 30%),
+    radial-gradient(circle at 56% 0%, rgba(245, 212, 155, 0.1), transparent 28%),
+    linear-gradient(135deg, rgba(255,255,255,.105), rgba(255,255,255,.034)),
+    rgba(4, 3, 13, 0.54);
+}
+
+.wisdom-feature-card::after {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  pointer-events: none;
+  border: 1px solid rgba(255, 242, 206, 0.1);
+  border-radius: 18px;
+}
+
+.wisdom-feature-copy h2 {
+  margin: 14px 0 8px;
+  font-size: clamp(1.7rem, 5vw, 3rem);
+  line-height: 1.08;
+}
+
+.wisdom-feature-copy p {
+  max-width: 720px;
+}
+
+.wisdom-feature-copy small {
+  display: block;
+  margin-top: 10px;
+  color: rgba(255, 242, 206, 0.78);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.wisdom-feature-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 14px;
+}
+
+.wisdom-feature-tags span {
+  border: 1px solid rgba(255, 242, 206, 0.18);
+  border-radius: 999px;
+  padding: 6px 9px;
+  color: var(--champagne);
+  background: rgba(255, 242, 206, 0.065);
+  font-size: 0.66rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.wisdom-launch {
+  width: fit-content;
+  white-space: nowrap;
+  box-shadow:
+    0 0 42px rgba(245, 212, 155, 0.22),
+    0 0 22px rgba(142, 231, 255, 0.12);
+}
+
+.wisdom-motif {
+  position: relative;
+  display: grid;
+  width: 132px;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid rgba(245, 212, 155, 0.18);
+  border-radius: 28px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255, 242, 206, 0.18), transparent 34%),
+    radial-gradient(circle at 78% 74%, rgba(142, 231, 255, 0.12), transparent 32%),
+    rgba(255, 255, 255, 0.045);
+  box-shadow:
+    0 0 30px rgba(245, 212, 155, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.wisdom-moon,
+.wisdom-ring,
+.wisdom-axis,
+.wisdom-manuscript,
+.wisdom-date-dot {
+  position: absolute;
+}
+
+.wisdom-moon {
+  left: 30px;
+  top: 25px;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  box-shadow: 10px 0 0 rgba(255, 242, 206, 0.9);
+  filter: drop-shadow(0 0 14px rgba(245, 212, 155, 0.24));
+}
+
+.wisdom-ring {
+  inset: 19px;
+  border: 1px solid rgba(245, 212, 155, 0.26);
+  border-radius: 999px;
+  transform: rotate(-12deg);
+}
+
+.wisdom-axis {
+  top: 14px;
+  bottom: 14px;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(245, 212, 155, 0.62), rgba(142, 231, 255, 0.28), transparent);
+}
+
+.wisdom-manuscript {
+  left: 25px;
+  right: 25px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 242, 206, 0.58), transparent);
+}
+
+.wisdom-manuscript.line-one {
+  bottom: 42px;
+}
+
+.wisdom-manuscript.line-two {
+  bottom: 32px;
+  opacity: 0.72;
+}
+
+.wisdom-date-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--champagne);
+  box-shadow: 0 0 16px rgba(245, 212, 155, 0.5);
+}
+
+.wisdom-date-dot.dot-one {
+  right: 34px;
+  top: 32px;
+}
+
+.wisdom-date-dot.dot-two {
+  right: 24px;
+  top: 58px;
+  background: var(--cyan);
+}
+
+.wisdom-date-dot.dot-three {
+  left: 30px;
+  bottom: 28px;
+}
+
 .two-col {
   display: grid;
   gap: 22px;
@@ -863,6 +1060,39 @@ a {
   border-color: rgba(245, 212, 155, 0.22);
   color: var(--champagne);
   background: rgba(245, 212, 155, 0.075);
+}
+
+.project-thai-wisdom {
+  border-color: rgba(255, 242, 206, 0.24);
+  background:
+    radial-gradient(circle at 16% 12%, rgba(255, 242, 206, 0.16), transparent 32%),
+    radial-gradient(circle at 88% 24%, rgba(142, 231, 255, 0.12), transparent 28%),
+    radial-gradient(circle at 78% 88%, rgba(245, 212, 155, 0.12), transparent 36%),
+    linear-gradient(135deg, rgba(255,255,255,.105), rgba(255,255,255,.036)),
+    rgba(4, 3, 13, 0.52);
+}
+
+.project-thai-wisdom::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  width: 72px;
+  height: 72px;
+  pointer-events: none;
+  border: 1px solid rgba(245, 212, 155, 0.16);
+  border-radius: 999px;
+  background:
+    linear-gradient(90deg, transparent 49%, rgba(245, 212, 155, 0.16) 50%, transparent 51%),
+    linear-gradient(0deg, transparent 49%, rgba(142, 231, 255, 0.1) 50%, transparent 51%);
+  opacity: 0.52;
+}
+
+.project-thai-wisdom .icon-chip,
+.project-thai-wisdom .project-tags span {
+  border-color: rgba(255, 242, 206, 0.24);
+  color: var(--champagne);
+  background: rgba(255, 242, 206, 0.065);
 }
 
 .project-support-title {
@@ -1696,7 +1926,8 @@ button:focus-visible {
     display: flex;
   }
 
-  .matrix-feature-card {
+  .matrix-feature-card,
+  .wisdom-feature-card {
     grid-template-columns: auto minmax(0, 1fr) auto;
   }
 
@@ -1789,7 +2020,8 @@ button:focus-visible {
     width: min(72%, 260px);
   }
 
-  .matrix-motif {
+  .matrix-motif,
+  .wisdom-motif {
     width: 108px;
   }
 

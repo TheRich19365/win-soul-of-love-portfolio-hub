@@ -1,6 +1,7 @@
 ﻿import Image from "next/image";
 import {
   ArrowUpRight,
+  CalendarDays,
   Compass,
   Cpu,
   Disc3,
@@ -33,6 +34,21 @@ const projects = [
     icon: Sparkles,
     accent: "daily",
     tags: ["AI Energy", "Aura", "Card Symbolism", "Poster Prompt", "Daily Reflection"]
+  },
+  {
+    name: "ฤกษ์ดี · Thai Wisdom",
+    supportTitle: "Soul of Love Thai Wisdom · MVP 0.1",
+    status: "Live Preview",
+    description:
+      "หน้าแยกสำหรับดูฤกษ์งามยามดีแบบเข้าใจง่าย เลือกวันที่และหัวข้อชีวิต เช่น งาน เงิน ความรัก สุขภาพ หรือการตัดสินใจ เพื่อดูจังหวะเบื้องต้น พร้อมชั้นลึกที่ปลดล็อกผ่านการพูดคุยกับ Win Soul of Love",
+    englishDescription:
+      "A symbolic Thai wisdom timing guide for daily auspicious reflection, topic-based previews, and deeper context-led reading.",
+    cta: "เปิดหน้า ฤกษ์ดี",
+    supportingCta: "Explore Symbolic Timing",
+    href: ecosystemLinks.thaiWisdom.url,
+    icon: CalendarDays,
+    accent: "thai-wisdom",
+    tags: ["Thai Wisdom", "ฤกษ์ดี", "Auspicious Day", "Symbolic Timing", "Deep Talk"]
   },
   {
     name: "Matrix 9 Interface",
@@ -139,8 +155,12 @@ const socialLinks = [
 ];
 
 const ecosystemContactLinks = [
+  { label: "Portfolio Hub", value: "Home Base", href: ecosystemLinks.portfolio.url, icon: Globe2 },
+  { label: "Daily Energy", value: "Daily Card Interface", href: ecosystemLinks.dailyEnergy.url, icon: Sparkles },
+  { label: "Thai Wisdom", value: "ฤกษ์ดี", href: ecosystemLinks.thaiWisdom.url, icon: CalendarDays },
   { label: "Matrix 9", value: "Living Soul Map", href: ecosystemLinks.matrix9.url, icon: Compass },
   { label: "YouTube Music", value: "Source Signal Music", href: ecosystemLinks.youtube.url, icon: Music2 },
+  { label: "LINE OA", value: ecosystemLinks.lineOa.id, href: ecosystemLinks.lineOa.url, icon: MessageCircle },
   { label: "Suno Music", value: "Soul of Love Music", href: ecosystemLinks.suno.url, icon: Music2 }
 ];
 
@@ -164,6 +184,7 @@ export default function Page() {
         </a>
         <nav className="desktop-nav" aria-label="Main navigation">
           <a href={ecosystemLinks.matrix9.url} {...externalLinkProps}>Matrix 9</a>
+          <a href={ecosystemLinks.thaiWisdom.url} {...externalLinkProps}>ฤกษ์ดี</a>
           <a href="#projects">Projects</a>
           <a href="#music-experience">Music</a>
           <a href="#contact">Contact</a>
@@ -188,15 +209,24 @@ export default function Page() {
             เชื่อมงานสร้างสรรค์ ประสบการณ์ของมนุษย์ ระบบ AI และพลังงานของแบรนด์ ให้กลายเป็นประสบการณ์ที่เข้าถึงได้จริง
           </p>
           <div className="hero-actions">
+            <a className="secondary-cta matrix-cta" href={ecosystemLinks.matrix9.url} {...externalLinkProps}>
+              เปิด MATRIX 9 <ArrowUpRight size={18} />
+            </a>
             <a className="primary-cta" href={ecosystemLinks.dailyEnergy.url} {...externalLinkProps}>
               Launch Daily Energy <ArrowUpRight size={18} />
             </a>
-            <a className="secondary-cta matrix-cta" href={ecosystemLinks.matrix9.url} {...externalLinkProps}>
-              เปิด MATRIX 9 <ArrowUpRight size={18} />
+            <a className="secondary-cta wisdom-cta" href={ecosystemLinks.thaiWisdom.url} {...externalLinkProps}>
+              ฤกษ์ดี <ArrowUpRight size={18} />
             </a>
             <a className="secondary-cta" href="#projects">
               Explore Projects
             </a>
+          </div>
+          <div className="hero-ecosystem-links" aria-label="Soul of Love ecosystem shortcuts">
+            <a href={ecosystemLinks.matrix9.url} {...externalLinkProps}>Matrix 9</a>
+            <a href={ecosystemLinks.dailyEnergy.url} {...externalLinkProps}>Daily Energy</a>
+            <a href={ecosystemLinks.thaiWisdom.url} {...externalLinkProps}>ฤกษ์ดี</a>
+            <a href={ecosystemLinks.lineOa.url} {...externalLinkProps}>LINE OA</a>
           </div>
         </div>
 
@@ -236,18 +266,32 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="featured-experience" aria-labelledby="matrix-featured-title">
-        <GlassCard className="matrix-feature-card">
-          <div className="matrix-motif" aria-hidden="true">
-            {Array.from({ length: 9 }).map((_, index) => <span key={index} />)}
+      <section className="featured-experience" aria-labelledby="wisdom-featured-title">
+        <GlassCard className="wisdom-feature-card">
+          <div className="wisdom-motif" aria-hidden="true">
+            <span className="wisdom-moon" />
+            <span className="wisdom-ring" />
+            <span className="wisdom-axis" />
+            <span className="wisdom-manuscript line-one" />
+            <span className="wisdom-manuscript line-two" />
+            <span className="wisdom-date-dot dot-one" />
+            <span className="wisdom-date-dot dot-two" />
+            <span className="wisdom-date-dot dot-three" />
           </div>
-          <div className="matrix-feature-copy">
-            <SignalBadge icon={Compass}>Live Application</SignalBadge>
-            <h2 id="matrix-featured-title">Matrix 9 — Living Soul Map</h2>
-            <p>ค้นพบ Core Blueprint และพลังงานตามช่วงเวลาผ่าน Pattern จากวันเดือนปีเกิด</p>
+          <div className="wisdom-feature-copy">
+            <SignalBadge icon={CalendarDays}>Soul of Love Thai Wisdom · MVP 0.1</SignalBadge>
+            <h2 id="wisdom-featured-title">ฤกษ์ดี · Thai Wisdom</h2>
+            <p>
+              ดูฤกษ์งามยามดีแบบเข้าใจง่าย เลือกวันที่และหัวข้อชีวิต เช่น งาน เงิน ความรัก สุขภาพ หรือการตัดสินใจ
+              เพื่อดูจังหวะเบื้องต้น พร้อมชั้นลึกที่ปลดล็อกผ่านการพูดคุยกับ Win Soul of Love
+            </p>
+            <small>Symbolic Thai Wisdom Timing · Daily Auspicious Reflection</small>
+            <div className="wisdom-feature-tags" aria-label="Thai Wisdom tags">
+              {["Thai Wisdom", "ฤกษ์ดี", "Auspicious Day", "Symbolic Timing", "Deep Talk"].map((tag) => <span key={tag}>{tag}</span>)}
+            </div>
           </div>
-          <a className="primary-cta matrix-launch" href={ecosystemLinks.matrix9.url} {...externalLinkProps}>
-            เปิด MATRIX 9 <ArrowUpRight size={18} />
+          <a className="primary-cta wisdom-launch" href={ecosystemLinks.thaiWisdom.url} {...externalLinkProps}>
+            เปิดหน้า ฤกษ์ดี <ArrowUpRight size={18} />
           </a>
         </GlassCard>
       </section>
@@ -426,8 +470,11 @@ export default function Page() {
       <footer className="footer">
         <span><Star size={14} /> Win Soul of Love</span>
         <span>Soul of Love Ecosystem</span>
-        <span><Map size={14} /> Daily Energy • Matrix 9 • Music • AI Interface • Journey of Light</span>
+        <span><Map size={14} /> Daily Energy • ฤกษ์ดี • Matrix 9 • Music • AI Interface • Journey of Light</span>
         <nav className="footer-links" aria-label="Footer ecosystem links">
+          <a href={ecosystemLinks.portfolio.url} {...externalLinkProps}>Portfolio Hub</a>
+          <a href={ecosystemLinks.dailyEnergy.url} {...externalLinkProps}>Daily Energy</a>
+          <a href={ecosystemLinks.thaiWisdom.url} {...externalLinkProps}>Thai Wisdom / ฤกษ์ดี</a>
           <a className="footer-line-link" href={ecosystemLinks.lineOa.url} {...externalLinkProps}>LINE Official · {ecosystemLinks.lineOa.id}</a>
           <a href={ecosystemLinks.matrix9.url} {...externalLinkProps}>Matrix 9</a>
           <a href={ecosystemLinks.email.mailto}>Email</a>

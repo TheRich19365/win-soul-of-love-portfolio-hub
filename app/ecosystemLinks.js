@@ -16,6 +16,12 @@ export const ecosystemLinks = {
     label: "Soul of Love Daily Energy",
     enabled: true
   },
+  thaiWisdom: {
+    url: "https://soul-of-love-daily-energy.vercel.app/thai-wisdom",
+    label: "ฤกษ์ดี · Thai Wisdom",
+    productLine: "Soul of Love Thai Wisdom · MVP 0.1",
+    enabled: true
+  },
   matrix9: {
     url: "https://matrix9-interface.vercel.app",
     label: "Matrix 9 Interface",
